@@ -20,6 +20,7 @@ class Noticia(models.Model):
     categoria = models.ForeignKey(Categoria)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
+    is_destacada = models.BooleanField()
 
     def __str__(self):
         return self.name

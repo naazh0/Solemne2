@@ -8,7 +8,7 @@ from django.template import RequestContext, loader
 
 def index(request):
 	data = {}
-	data['object_list'] = Noticia.objects.order_by('-created')
+	data['object_list'] = Noticia.objects.order_by('-created')[:6]
 	template = 'noticias/index.html'
 	return render(request, template, data)
 
