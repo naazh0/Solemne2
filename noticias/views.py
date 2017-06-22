@@ -7,8 +7,10 @@ from django.template import RequestContext, loader
 
 
 def index(request):
-	template = loader.get_template('noticias/index.html')
-	return HttpResponse(template.render())
+	data = {}
+	data['object_list'] = Noticia.objects.order_by('-created')
+	template = 'noticias/index.html'
+	return render(request, template, data)
 
     #ultima_noticia_list = Categoria.objects.order_by('created')[:5]
     #output = [p.name for p in ultima_noticia_list]

@@ -68,6 +68,9 @@ TEMPLATES = [
     },
 ]
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = 'http://127.0.0.1:8080/media/'
+
 WSGI_APPLICATION = 'solemnefinal.wsgi.application'
 
 

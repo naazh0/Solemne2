@@ -25,37 +25,13 @@
           </div>
           <div class="col-lg-8">
             <div class="row">
+              {% for noticia in object_list %}
               <div class="col-xs-6 col-sm-4">
-                <img src="http://placehold.it/500x300" alt="" class="img-responsive img-thumbnail">
-                <p><a href="noticia_detalle.html">Consectetur adipisicing elit. </a></p>
-                <p><span class="label label-info">Noticias</span></p>
+                <img src="{{ noticia.imagen }}" alt="" class="">
+                <p><a href="noticia_detalle.html">{{ noticia.name }}</a></p>
+                <p><span class="label label-info">{{ noticia.categoria }}</span></p>
               </div>
-              <div class="col-xs-6 col-sm-4">
-                <img src="http://placehold.it/500x300" alt="" class="img-responsive img-thumbnail">
-                <p><a href="noticia_detalle.html">Nisi molestias voluptatum vitae </a></p>
-                <p><span class="label label-info">Educación</span></p>
-              </div>
-              <div class="col-xs-6 col-sm-4">
-                <img src="http://placehold.it/500x300" alt="" class="img-responsive img-thumbnail">
-                <p><a href="noticia_detalle.html">Voluptatum vitae debitis voluptatibus</a></p>
-                <p><span class="label label-info">Noticias</span></p>
-              </div>              
-
-              <div class="col-xs-6 col-sm-4">
-                <img src="http://placehold.it/500x300" alt="" class="img-responsive img-thumbnail">
-                <p><a href="noticia_detalle.html">Molestias voluptatum vitae debitis</a></p>
-                <p><span class="label label-info">Educación</span></p>
-              </div>
-              <div class="col-xs-6 col-sm-4">
-                <img src="http://placehold.it/500x300" alt="" class="img-responsive img-thumbnail">
-                <p><a href="noticia_detalle.html">Nisi molestias voluptatum</a></p>
-                <p><span class="label label-info">Educación</span></p>
-              </div>
-              <div class="col-xs-6 col-sm-4">
-                <img src="http://placehold.it/500x300" alt="" class="img-responsive img-thumbnail">
-                <p><a href="noticia_detalle.html">Voluptatibus consectetur adipisicing elit</a></p>
-                <p><span class="label label-info">Educación</span></p>
-              </div>              
+              {% endfor %}            
             </div>
           </div>
         </div>
