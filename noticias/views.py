@@ -9,10 +9,11 @@ from django.template import RequestContext, loader
 def index(request):
 	#data = {}
 	#data['object_list'] = Noticia.objects.order_by('-created')[:6]
-	object_list = Noticia.objects.order_by('-created')[:6]
+	object_list = Noticia.objects.order_by('-created')[:7]
 	#data2 = {}
 	#data['noticia_destacada'] = Noticia.objects.filter(is_destacada=True)[:1]
 	noticia_destacada = Noticia.objects.filter(is_destacada=True).order_by('-created')[:1]
+
 	template = 'noticias/index.html'
 	return render(request, template, {'object_list':object_list, 'noticia_destacada':noticia_destacada})
 
