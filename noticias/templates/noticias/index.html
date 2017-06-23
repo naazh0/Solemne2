@@ -1,5 +1,6 @@
 {% extends "noticias/base.html" %}
 {% load static %}
+{% load thumbnail %}
 {% block content %}
   <section>
     <div class="container">
@@ -15,7 +16,7 @@
             <div class="row">
             {% for noticia in noticia_destacada %}
               <div class="col-sm-4 col-lg-12">
-                <img src="http://placehold.it/300x200" alt="" class="img-thumbnail">
+                <img src="{{noticia.imagen.url}}" alt="" class="img-thumbnail">
               </div>
               <div class="col-sm-8 col-lg-12">            
                 <h4>{{noticia.name}}</h4>
@@ -28,7 +29,9 @@
             <div class="row">
               {% for noticia in object_list %}
               <div class="col-xs-6 col-sm-4">
-                <img src="{{ noticia.imagen }}" alt="" class="">
+              {% thumbnail noticia.imagen "170x170" crop="center" as im %}
+                <img src="{{ im.url }}" alt="" class="" style="">
+              {% endthumbnail %}
                 <p><a href="{% url 'detalle_noticia' noticia.id %}">{{ noticia.name }}</a></p>
                 <p><span class="label label-info">{{ noticia.categoria }}</span></p>
                 </div>
